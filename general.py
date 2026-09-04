@@ -9,8 +9,9 @@ import matplotlib.pyplot as plt
 # ------------------------
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"C:\Users\LOQ\Desktop\movies_dashboard\movvies.csv")
-    # إضافة عمود profit لو مش موجود
+ 
+df = pd.read_xlsx("cleaning data netflix")
+    # إضمش موجود
     if "profit" not in df.columns:
         df["profit"] = df["Revenue"] - df["Budget"]
     return df
