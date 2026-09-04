@@ -25,42 +25,44 @@ df = load_data()
 # Pages as functions
 # ------------------------
 
+import streamlit as st
+
 def show_home():
     st.title("🎬 Movies Dashboard")
 
-    # Top Movies Posters
+    # Top Movies Posters (Local Paths)
     movie_posters = {
-        "Avatar": "https://m.media-amazon.com/images/I/41kTVLeW1CL._AC_.jpg",
-        "Avengers: Endgame": "https://m.media-amazon.com/images/I/81ExhpBEbHL._AC_SY679_.jpg",
-        "Titanic": "https://m.media-amazon.com/images/I/71yAzBqCk7L._AC_SY679_.jpg",
-        "The Dark Knight": "https://m.media-amazon.com/images/I/51EbJjlLg9L._AC_.jpg",
-        "Inception": "https://m.media-amazon.com/images/I/5101m7V0scL._AC_.jpg"
+        "Avatar": "images/Avatar.jpg",
+        "Avengers: Endgame": "images/Avengers_Endgame.jpg",
+        "Titanic": "images/Titanic.jpg",
+        "The Dark Knight": "images/The_Dark_Knight.jpg",
+        "Inception": "images/Inception.jpg"
     }
 
     st.header("🔥 Top 5 Movies by Popularity")
     cols = st.columns(5)
-    for i, (movie, url) in enumerate(movie_posters.items()):
+    for i, (movie, path) in enumerate(movie_posters.items()):
         with cols[i]:
             try:
-                st.image(url, caption=movie, use_container_width=True)
+                st.image(path, caption=movie, use_container_width=True)
             except:
                 st.error(f"Could not load image for {movie}")
 
-    # Top Actors
+    # Top Actors (Local Paths)
     actor_images = {
-        "Robert Downey Jr.": "https://upload.wikimedia.org/wikipedia/commons/5/50/Robert_Downey_Jr_2014_Comic_Con_%28cropped%29.jpg",
-        "Scarlett Johansson": "https://upload.wikimedia.org/wikipedia/commons/2/20/Scarlett_Johansson_in_Kuwait_01b-tweaked.jpg",
-        "Tom Hanks": "https://upload.wikimedia.org/wikipedia/commons/9/96/Tom_Hanks_2016.jpg",
-        "Leonardo DiCaprio": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Leonardo_DiCaprio_66ème_Festival_de_Venise_%28Mostra%29.jpg",
-        "Sylvester Stallone": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Sylvester_Stallone_by_Gage_Skidmore_2.jpg"
+        "Robert Downey Jr.": "images/Robert_Downey_Jr.jpg",
+        "Scarlett Johansson": "images/Scarlett_Johansson.jpg",
+        "Tom Hanks": "images/Tom_Hanks.jpg",
+        "Leonardo DiCaprio": "images/Leonardo_DiCaprio.jpg",
+        "Sylvester Stallone": "images/Sylvester_Stallone.jpg"
     }
 
     st.header("⭐ Top 5 Actors")
     cols = st.columns(5)
-    for i, (actor, url) in enumerate(actor_images.items()):
+    for i, (actor, path) in enumerate(actor_images.items()):
         with cols[i]:
             try:
-                st.image(url, caption=actor, use_container_width=True)
+                st.image(path, caption=actor, use_container_width=True)
             except:
                 st.error(f"Could not load image for {actor}")
 
