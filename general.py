@@ -9,10 +9,13 @@ import matplotlib.pyplot as plt
 # ------------------------
 @st.cache_data
 def load_data():
- df = pd.read_xlsx("cleaning data netflix")
-    # إضمش موجود
+    # تعديل اسم الدالة وإضافة امتداد الملف .xlsx
+    df = pd.read_excel("cleaning data netflix.xlsx")
+    
+    # التأكد من حساب الأرباح إذا لم تكن موجودة
     if "profit" not in df.columns:
         df["profit"] = df["Revenue"] - df["Budget"]
+        
     return df
  
 
