@@ -9,12 +9,12 @@ import matplotlib.pyplot as plt
 # ------------------------
 @st.cache_data
 def load_data():
- 
-df = pd.read_xlsx("cleaning data netflix")
+ df = pd.read_xlsx("cleaning data netflix")
     # إضمش موجود
     if "profit" not in df.columns:
         df["profit"] = df["Revenue"] - df["Budget"]
     return df
+ 
 
 df = load_data()
 
