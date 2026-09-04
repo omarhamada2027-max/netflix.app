@@ -30,13 +30,13 @@ import streamlit as st
 def show_home():
     st.title("🎬 Movies Dashboard")
 
-    # Top Movies Posters (Local Paths)
+    # Top Movies Posters (مطابق تماماً لأسماء الملفات في GitHub)
     movie_posters = {
-        "Avatar": "images/Avatar.jpg",
-        "Avengers: Endgame": "images/Avengers_Endgame.jpg",
-        "Titanic": "images/Titanic.jpg",
-        "The Dark Knight": "images/The_Dark_Knight.jpg",
-        "Inception": "images/Inception.jpg"
+        "Avatar": "images/Avatar.jpg",  # تأكد من رفع صورة Avatar باسم Avatar.jpg داخل مجلد images
+        "Avengers: Endgame": "images/Avengers_Endgame.jpg",  # تأكد من وجودها داخل images
+        "Titanic": "images/Titanic.jfif",
+        "The Dark Knight": "images/The Dark Knight.jfif",
+        "Inception": "images/Inception.jfif"
     }
 
     st.header("🔥 Top 5 Movies by Popularity")
@@ -48,13 +48,13 @@ def show_home():
             except:
                 st.error(f"Could not load image for {movie}")
 
-    # Top Actors (Local Paths)
+    # Top Actors (مطابق تماماً لأسماء الملفات في GitHub)
     actor_images = {
-        "Robert Downey Jr.": "images/Robert_Downey_Jr.jpg",
-        "Scarlett Johansson": "images/Scarlett_Johansson.jpg",
-        "Tom Hanks": "images/Tom_Hanks.jpg",
-        "Leonardo DiCaprio": "images/Leonardo_DiCaprio.jpg",
-        "Sylvester Stallone": "images/Sylvester_Stallone.jpg"
+        "Robert Downey Jr.": "images/Robert Downey Jr",
+        "Scarlett Johansson": "images/Scarlett Johansson.webp",
+        "Tom Hanks": "images/tom hanks.webp",
+        "Leonardo DiCaprio": "images/Leonardo DiCaprio.webp",
+        "Sylvester Stallone": "images/Sylvester Stallone.webp"
     }
 
     st.header("⭐ Top 5 Actors")
